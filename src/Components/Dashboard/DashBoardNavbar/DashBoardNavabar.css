@@ -1,0 +1,51 @@
+.navlogo {
+  width: 30%;
+}
+
+.sectionName {
+  width: 40%;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.userName {
+  width: 30%;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* mobile version*/
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .sectionName {
+    justify-content: center !important;
+  }
+  .sectionName h5 {
+    font-size: 0.96em !important;
+  }
+
+  .userName {
+    justify-content: center !important;
+  }
+
+  .userName h5 {
+    font-size: 0.96em !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .sectionName {
+    justify-content: center !important;
+  }
+  .sectionName h5 {
+    font-size: 0.96em !important;
+  }
+  .userName {
+    justify-content: center !important;
+  }
+
+  .userName h5 {
+    font-size: 0.96em !important;
+  }
+}

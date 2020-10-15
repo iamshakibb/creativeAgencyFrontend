@@ -1,0 +1,93 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  word-wrap: break-word;
+}
+
+a {
+  color: #000;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* common css style */
+
+.seeAll {
+  color: #7ab259;
+}
+
+.seeAll:hover {
+  color: #7ab259;
+}
+
+.success {
+  color: #7ab259;
+}
+
+.error {
+  color: salmon;
+}
+
+.mobile {
+  display: none !important;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.Heading span {
+  color: #7ab259;
+}
+
+.commonBtn {
+  background-color: #111430;
+  border: none;
+  padding: 10px 30px;
+}
+
+.commonBtn:hover {
+  background-color: #111430;
+  border: none;
+}
+
+.commonBtn:focus {
+  outline: none !important;
+  background-color: #111430 !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+.filepond--drop-label {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.dashboardItemContainer {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+}
+
+.addScroll {
+  overflow-y: scroll;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* common css style */

@@ -1,0 +1,36 @@
+.navBar {
+  margin-bottom: 70px;
+}
+
+.navMenu a {
+  position: relative;
+}
+
+.navMenu a::after {
+  position: absolute;
+  content: "";
+  bottom: 20%;
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  transition: 900ms ease;
+}
+
+.loginBtn {
+  padding: 10px 30px;
+}
+
+/* mobile version*/
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .navMenuList {
+    margin-bottom: 30px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navMenuList {
+    margin-bottom: 30px;
+  }
+}

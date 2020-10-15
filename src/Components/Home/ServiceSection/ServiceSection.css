@@ -1,0 +1,14 @@
+.servicesItem img {
+  width: 100px;
+}
+
+.servicesItem {
+  border-radius: 20px;
+  transform: scale(0.9);
+  transition: 500ms ease;
+}
+
+.servicesItem:hover {
+  transform: scale(1);
+  box-shadow: 2px 3px 20px 0px #e5e5e5;
+}
