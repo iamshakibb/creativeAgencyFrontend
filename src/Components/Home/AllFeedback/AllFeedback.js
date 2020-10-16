@@ -22,7 +22,7 @@ export default function AllFeedback() {
           ) : (
             clientFeedbackData.map((data) => (
               <div key={data._id} className="col-lg-4 col-md-6 clientFeedback mb-4">
-                <div className="clientFeedBackContainer p-3">
+                <div className="clientFeedBackContainer p-3" style={{ height: "200px" }}>
                   <Row>
                     <div className="col-sm-12">
                       <Row className="align-items-center justify-content-center">
