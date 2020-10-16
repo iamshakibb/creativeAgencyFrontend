@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function ServiceSection() {
   const [services, setServices] = useState();
   useEffect(() => {
-    axios.get("http://localhost:8000/getServices").then((res) => setServices(res.data));
+    axios.get("https://polar-dawn-10321.herokuapp.com/getServices").then((res) => setServices(res.data));
   }, []);
   let sixServices;
   if (services) {
@@ -31,7 +31,8 @@ export default function ServiceSection() {
             ) : (
               sixServices.map((service) => (
                 <div className="col-md-4 servicesItem text-center" key={service._id}>
-                  <Link to={{ pathname: `/dashboard/order/${service.title}`, search: `?sort=${service.image.img}` }}>
+                  {/* <Link to={{ pathname: `/order/${service.title}`, search: `?sort=${service.image.img}` }}> */}
+                  <Link to={{ pathname: `/order/${service.title}`, search: `?sort=${service.image.img}` }}>
                     <Row className="my-3 align-items-center justify-content-center">
                       <div className="col-sm-12">
                         <img src={`data:image/png;base64,${service.image.img}`} alt={`${service.title}`} />

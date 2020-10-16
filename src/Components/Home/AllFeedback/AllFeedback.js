@@ -6,7 +6,7 @@ import NavBar from "../NavBar/NavBar";
 export default function AllFeedback() {
   const [clientFeedbackData, setClientFeedbackData] = useState();
   useEffect(() => {
-    Axios.get("http://localhost:8000/getClientFeedback").then((res) => {
+    Axios.get("https://polar-dawn-10321.herokuapp.com/getClientFeedback").then((res) => {
       setClientFeedbackData(res.data);
     });
   }, [clientFeedbackData]);

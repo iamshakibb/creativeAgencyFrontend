@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Link as Goto } from "react-scroll";
+import { UserInfoContent } from "../../../App";
 import "./NavBar.css";
 
 export default function NavBar() {
+  const user = useContext(UserInfoContent);
+  const { userInfo, setUserInfo } = user;
+
+  const logOut = () => {
+    setUserInfo({
+      email: "",
+      img: "",
+      name: "",
+    });
+  };
   return (
     <Container>
       <Navbar expand="md" className="navBar">
@@ -20,15 +31,21 @@ export default function NavBar() {
             <Goto to="workBackground" className="mr-4 navMenuList" smooth={true} duration={1000}>
               Our Portfolio
             </Goto>
-            <Link to="/" className="mr-4 navMenuList">
+            <Link to="/ourTeam" className="mr-4 navMenuList">
               Our Team
             </Link>
             <Goto to="FooterSection" smooth={true} duration={1000} className="mr-4 navMenuList">
               Contact Us
             </Goto>
-            <Link to="/dashboard/order/${service.title}">
-              <Button className="loginBtn commonBtn mr-3">Login</Button>
-            </Link>
+            {userInfo.email.length > 0 ? (
+              <Button onClick={logOut} style={{ cursor: "pointer" }} className="commonBtn mr-3">
+                Log Out
+              </Button>
+            ) : (
+              <Link to="/order">
+                <Button className="loginBtn commonBtn mr-3">Login</Button>
+              </Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

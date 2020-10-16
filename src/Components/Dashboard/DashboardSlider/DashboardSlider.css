@@ -3,22 +3,31 @@
 @media (max-width: 575.98px) {
   .sliderContainer {
     margin: 0 !important;
-    padding: 0 !important;
-    height: 55vh !important;
+    padding-left: 0 !important;
   }
-  .sliderMenu {
-    padding: 5px 20px !important;
+  .sliderMenuContainer {
+    margin: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .slider {
+    height: 60vh !important;
+    text-align: center;
+  }
+
+  .sliderMenuContainer ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 10px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .sliderContainer {
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 55vh !important;
-  }
-  .sliderMenu {
-    padding: 5px 20px !important;
+  .slider {
+    height: 100% !important;
+    text-align: center;
   }
 }

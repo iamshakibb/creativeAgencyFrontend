@@ -1,0 +1,36 @@
+.addServicesForm {
+  padding-right: 10px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .dashboardContainer {
+    margin: 40px 0px 0px 0px !important;
+  }
+
+  .addServicesForm {
+    padding-right: 0px;
+  }
+
+  .addServiceForm {
+    margin: 0px !important;
+  }
+
+  .addServiceForm .row {
+    padding: 10px !important;
+  }
+
+  .addServiceBtn {
+    padding-right: 10px !important;
+  }
+}
+
+/* small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .dashboardContainer {
+    margin: 40px 0px 0px 0px !important;
+  }
+  .addServicesForm {
+    padding-right: 10px !important;
+  }
+}

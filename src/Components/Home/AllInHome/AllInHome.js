@@ -10,6 +10,7 @@ import WorkSection from "../WorkSection/WorkSection";
 import "./AllInHome.css";
 
 export default function AllInHome() {
+  document.body.style.backgroundColor = "#fff";
   return (
     <div>
       <div className="LandingSite">

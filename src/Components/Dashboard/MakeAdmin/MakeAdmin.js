@@ -1,9 +1,16 @@
 import Axios from "axios";
-import React, { useState } from "react";
-import { Button, Form, FormGroup } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { Button, Form, FormGroup, Row } from "react-bootstrap";
+import { UserInfoContent } from "../../../App";
+import DashboardSlider from "../DashboardSlider/DashboardSlider";
+import DashboardStatus from "../DashbordPageStatus/DashboardStatus";
 import "./MakeAdmin.css";
 
-export default function MakeAdmin({ userInfo, setUserInfo }) {
+export default function MakeAdmin() {
+  document.body.style.backgroundColor = "#e5e5e5";
+  const user = useContext(UserInfoContent);
+  const { userInfo, setUserInfo } = user;
+
   const [email, setEmail] = useState({
     email: "",
   });
@@ -17,7 +24,7 @@ export default function MakeAdmin({ userInfo, setUserInfo }) {
 
   const emailSubmit = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:8000/addAdmin", email)
+    Axios.post("https://polar-dawn-10321.herokuapp.com/addAdmin", email)
       .then(() => {
         setUserInfo({ ...userInfo, successMessage: "Make admin Successfully" });
       })
@@ -25,21 +32,36 @@ export default function MakeAdmin({ userInfo, setUserInfo }) {
         setUserInfo({ ...userInfo, errorMessage: "Can not make admin. Please Try again later" });
       });
   };
+
   return (
-    <div className="dashboardItemContainer col-md-12 my-4 p-5">
-      <Form onSubmit={emailSubmit} className="makeAdminForm">
-        <p className="success">{userInfo.successMessage}</p>
-        <p className="error">{userInfo.errorMessage}</p>
-        <FormGroup>
-          <Form.Label>Email</Form.Label>
-          <div className="d-flex emailContainer justify-content-center align-items-center">
-            <Form.Control onChange={emailData} required type="email" className=" email" name="Email" placeholder="Enter email" />
-            <Button type="submit" className="mx-3 adminBtn commonBtn">
-              Make Admin
-            </Button>
+    <>
+      <div>
+        <Row>
+          <div className="col-md-4 col-sm-5 col-lg-3 pr-0">
+            <DashboardSlider />
           </div>
-        </FormGroup>
-      </Form>
-    </div>
+          <div className="col-md-8 col-sm-7 col-lg-9 p-0">
+            <DashboardStatus pageName={{ name: "Make Admin" }} />
+            <Form onSubmit={emailSubmit} className="makeAdminForm" style={{ height: "67vh" }}>
+              <FormGroup className="px-5 my-5">
+                <p style={userInfo.successMessage ? { animation: "FadeAnimation 1s ease-in 2s forwards" } : null} className="success">
+                  {userInfo.successMessage}
+                </p>
+                <p style={userInfo.errorMessage ? { animation: "FadeAnimation 1s ease-in 2s forwards" } : null} className="error">
+                  {userInfo.errorMessage}
+                </p>
+                <Form.Label>Email</Form.Label>
+                <div className="d-flex emailContainer justify-content-center align-items-center">
+                  <Form.Control onChange={emailData} required type="email" className=" email" name="Email" placeholder="Enter email" />
+                  <Button type="submit" className="mx-3 adminBtn commonBtn">
+                    Make Admin
+                  </Button>
+                </div>
+              </FormGroup>
+            </Form>
+          </div>
+        </Row>
+      </div>
+    </>
   );
 }

@@ -13,6 +13,7 @@ const firebaseInit = () => {
 };
 firebaseInit();
 export default function LoginForm() {
+  document.body.style.backgroundColor = "#fff";
   const user = useContext(UserInfoContent);
   const { userInfo, setUserInfo } = user;
   let history = useHistory();
@@ -21,6 +22,7 @@ export default function LoginForm() {
 
   // handling the google login
   const handleGoogleLogin = () => {
+    setUserInfo({ ...userInfo, signupError: "" });
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
@@ -37,6 +39,7 @@ export default function LoginForm() {
           img: photoURL,
         };
         setUserInfo(info);
+        sessionStorage.setItem("email", email, "img", photoURL);
         history.replace(from);
       })
       .catch(function (error) {
@@ -49,6 +52,10 @@ export default function LoginForm() {
         setUserInfo(info);
         setUserInfo({ ...userInfo, signupError: errorMessage });
       });
+  };
+
+  const removeErrorMesssage = () => {
+    setUserInfo({ ...userInfo, signupError: "" });
   };
   return (
     <Container>
@@ -66,6 +73,7 @@ export default function LoginForm() {
                 <p className="error">{userInfo.signupError}</p>
               </div>
               <Button
+                onMouseEnter={removeErrorMesssage}
                 onClick={() => handleGoogleLogin()}
                 style={{ backgroundColor: "#fff", border: "2px solid #ABABAB", color: "#000" }}
                 className="px-5  d-flex justify-content-center align-items-center"

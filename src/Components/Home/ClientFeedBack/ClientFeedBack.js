@@ -7,14 +7,14 @@ import "./ClientFeedBack.css";
 export default function ClientFeedBack() {
   const [clientFeedbackData, setClientFeedbackData] = useState();
   useEffect(() => {
-    Axios.get("http://localhost:8000/getClientFeedback").then((res) => {
+    Axios.get("https://polar-dawn-10321.herokuapp.com/getClientFeedback").then((res) => {
       setClientFeedbackData(res.data);
     });
   }, [clientFeedbackData]);
 
   let sixFeedback;
   if (clientFeedbackData) {
-    const newFeedback = clientFeedbackData.slice(0, 6);
+    const newFeedback = clientFeedbackData.slice(0, 3);
     sixFeedback = newFeedback;
   }
 
