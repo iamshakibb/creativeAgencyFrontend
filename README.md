@@ -5,19 +5,19 @@ Creative Agency is a full-stack service selling web application.
 
 **Functionality :**  
 
- - Clients can log in through firebase.  
- - Clients can order services and see the status of their ordered services.  
- - Admin can add new services and change the client ordered services status.  
- - Admin also can make a new admin
+ 1. Clients can log in through firebase.  
+ 2. Clients can order services and see the status of their ordered services.  
+ 3. Admin can add new services and change the client ordered services status.  
+ 4. Admin also can make a new admin.
 
 **Technology Used**: 
 
- 1. ReactJS
- 2.  Bootstrap
- 3.  NodeJS
- 4.  ExpressJS
- 5.  MongoDB
- 6.  Heroku
- 7.  React Router
- 8.  Firebase
- 9.  React-Scroll.
+ - ReactJS.
+ -  Bootstrap.
+ -  NodeJS.
+ -  ExpressJS.
+ -  MongoDB.
+ -  Heroku.
+ -  React Router.
+ -  Firebase.
+ -  React-Scroll.  
