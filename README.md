@@ -1,4 +1,4 @@
-# Creative Agency 
+# Creative Agency
 [![enter image description here](https://i.ibb.co/RcG1jDP/Screenshot-2020-10-28-130845.png)](https://creative-agency-13260.web.app/)
 
 Creative Agency is a full-stack service selling web application.
@@ -11,4 +11,13 @@ Creative Agency is a full-stack service selling web application.
  - Admin also can make a new admin
 
 **Technology Used**: 
-ReactJS, Bootstrap, NodeJS, ExpressJS, MongoDB. Heroku, React Router, Firebase,React-Scroll.
+
+ 1. ReactJS
+ 2.  Bootstrap
+ 3.  NodeJS
+ 4.  ExpressJS
+ 5.  MongoDB
+ 6.  Heroku
+ 7.  React Router
+ 8.  Firebase
+ 9.  React-Scroll.
