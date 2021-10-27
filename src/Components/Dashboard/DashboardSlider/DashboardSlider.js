@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faHdd, faPlus, faShoppingCart, faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import "./DashboardSlider.css";
-import Axios from "axios";
-import { Row } from "react-bootstrap";
-import { useContext } from "react";
-import { UserInfoContent } from "../../../App";
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faComment,
+  faHdd,
+  faPlus,
+  faShoppingCart,
+  faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import './DashboardSlider.css';
+import Axios from 'axios';
+import { Row } from 'react-bootstrap';
+import { useContext } from 'react';
+import { UserInfoContent } from '../../../App';
 
 export default function DashboardSlider() {
   const user = useContext(UserInfoContent);
@@ -14,18 +20,27 @@ export default function DashboardSlider() {
   const [isAdminHere, setIsAdminHere] = useState();
   const email = userInfo.email;
   useEffect(() => {
-    Axios.get(`https://polar-dawn-10321.herokuapp.com/getAdminInfo?email=` + email).then((res) => {
+    Axios.get(
+      `https://creativeagencybyreact.herokuapp.com/getAdminInfo?email=` + email
+    ).then((res) => {
       const adminData = res.data;
       setIsAdminHere({ adminData });
     });
   }, []);
   return (
-    <div style={{ height: "100vh", backgroundColor: "#fff", marginTop: "-16px" }} className="slider">
+    <div
+      style={{ height: '100vh', backgroundColor: '#fff', marginTop: '-16px' }}
+      className="slider"
+    >
       <div className="col-md-12 pl-5 mt-3 sliderContainer">
         <Row>
           <div className=" col-md-12 ml-2 mt-4 ">
             <Link to="/">
-              <img style={{ width: "120px" }} src="https://i.ibb.co/t445Mcy/logo.png" alt="LOGO" />
+              <img
+                style={{ width: '120px' }}
+                src="https://i.ibb.co/t445Mcy/logo.png"
+                alt="LOGO"
+              />
             </Link>
           </div>
           <div className="col-md-12 sliderMenuContainer my-5">
