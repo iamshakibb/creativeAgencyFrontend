@@ -41,7 +41,6 @@ export default function ClientFeedBack() {
               key={data._id}
               className="col-lg-4 col-md-6 clientFeedback mb-4"
             >
-              {console.log(data.img)}
               <div
                 className="clientFeedBackContainer  p-3"
                 style={{ height: '200px' }}
