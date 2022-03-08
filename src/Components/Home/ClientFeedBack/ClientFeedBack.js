@@ -12,7 +12,7 @@ export default function ClientFeedBack() {
     ).then((res) => {
       setClientFeedbackData(res.data);
     });
-  }, [clientFeedbackData]);
+  }, []);
 
   let sixFeedback;
   if (clientFeedbackData) {

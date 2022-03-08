@@ -11,7 +11,7 @@ export default function ServiceSection() {
       .get('https://creativeagencybyreact.herokuapp.com/getServices')
       .then((res) => {
         setServices(res.data);
-        console.log(res);
+        // console.log(res);
       });
   }, []);
   let sixServices;

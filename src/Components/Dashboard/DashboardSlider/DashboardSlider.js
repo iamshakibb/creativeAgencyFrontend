@@ -26,7 +26,7 @@ export default function DashboardSlider() {
       const adminData = res.data;
       setIsAdminHere({ adminData });
     });
-  }, []);
+  }, [email]);
   return (
     <div
       style={{ height: '100vh', backgroundColor: '#fff', marginTop: '-16px' }}

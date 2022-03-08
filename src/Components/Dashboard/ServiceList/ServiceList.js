@@ -17,7 +17,7 @@ export default function ServiceList() {
     ).then((res) => {
       setServiceListData(res.data);
     });
-  }, []);
+  }, [email]);
   return (
     <>
       <div>
